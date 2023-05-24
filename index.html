@@ -7,7 +7,7 @@
 
 <body>
     <div class="container">
-        <form>
+        <form onsubmit="enviarEmail(); reset(); return false;">
             <h3>Entrar em contato</h3>
             <input type="text" id="name" placeholder="Seu nome" required>
             <input type="email" id="email" placeholder="Email" required>
@@ -16,6 +16,25 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <script>
+        function enviarEmail(){
+            Email.send({
+                Host : "smtp.gmail.com",
+                Username : "phenriquesoares2005@gmail.com",
+                Password : "123123123",
+                To : 'phenriquesoares360@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "Novo formulário de contato",
+                Body : "And this is the body"
+            }).then(
+              message => alert(message)
+            );
+        }
+    </script>
+
 </body>
 
 </html>
