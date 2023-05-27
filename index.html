@@ -3,37 +3,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de contato usando javascript</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <form onsubmit="enviarEmail(); reset(); return false;">
-            <h3>Entrar em contato</h3>
-            <input type="text" id="name" placeholder="Seu nome" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="text" id="phone" placeholder="Seu numero de telefone." required>
-            <textarea id="message" rows="4" placeholder="Como eu posso te ajudar hoje?"></textarea>
-            <button type="submit">Enviar</button>
+    <div class="wrapper">
+        <header>Envie uma mesnsagem</header>
+        <form action="#">
+            <div class="dbl-field">
+                <div class="field">
+                    <input type="text" placeholder="Coloque o seu nome">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
         </form>
     </div>
 
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src=" "></script>
 
-    <script>
-        function enviarEmail(){
-            Email.send({
-                Host : "smtp.elasticemail.com",
-                Username : "phenriquesoares2005@gmail.com",
-                Password : "304965B209C77C26D34D6C190C20DC0E394B",
-                To : 'phenriquesoares2005@gmail.com',
-                From : document.getElementById("email").value,
-                Subject : "Novo formulário de contato",
-                Body : " v "
-            }).then(
-              message => alert(message)
-            );
-        }
-    </script>
 
 </body>
 
